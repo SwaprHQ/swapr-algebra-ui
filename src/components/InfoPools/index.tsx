@@ -157,7 +157,7 @@ export function InfoPools({ data, fetchHandler, blocksFetched }: InfoPoolsProps)
                             <Trans>🔥 Farming</Trans>
                             <HelpCircle style={{ display: "block", marginLeft: "6px" }} color={"white"} size={"1rem"} />
                             <Trans>
-                                <span className="helper">Farming rewards are claimable through https://merkl.angle.money/</span>
+                                <span className="helper">Farming rewards are claimable through merkl.angle.money</span>
                             </Trans>
                         </span>
                     </TableHeader>
