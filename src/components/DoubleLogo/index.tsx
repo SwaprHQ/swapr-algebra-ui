@@ -20,17 +20,19 @@ interface DoubleCurrencyLogoProps {
     currency1?: Currency;
 }
 
-const HigherLogo = styled(CurrencyLogo)``;
-const CoveredLogo = styled(CurrencyLogo)<{ sizeraw: number }>`
+const HigherLogo = styled(CurrencyLogo)<{ sizeraw: number }>`
     position: absolute;
     left: ${({ sizeraw }) => "-" + (sizeraw / 1.5).toString() + "px"} !important;
 `;
+const CoveredLogo = styled(CurrencyLogo)``;
 
 export default function DoubleCurrencyLogo({ currency0, currency1, size = 16, margin = false }: DoubleCurrencyLogoProps) {
+    console.log("currency0: ", currency0);
+    console.log("currency1: ", currency1);
     return (
         <Wrapper sizeraw={size} margin={margin}>
-            {currency0 && <HigherLogo currency={currency1 as WrappedCurrency} size={size.toString() + "px"} />}
-            {currency1 && <CoveredLogo currency={currency0 as WrappedCurrency} size={size.toString() + "px"} sizeraw={size} />}
+            {currency0 && <HigherLogo currency={currency0 as WrappedCurrency} size={size.toString() + "px"} sizeraw={size} />}
+            {currency1 && <CoveredLogo currency={currency1 as WrappedCurrency} size={size.toString() + "px"} />}
         </Wrapper>
     );
 }
