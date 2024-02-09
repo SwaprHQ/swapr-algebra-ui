@@ -27,8 +27,6 @@ const HigherLogo = styled(CurrencyLogo)<{ sizeraw: number }>`
 const CoveredLogo = styled(CurrencyLogo)``;
 
 export default function DoubleCurrencyLogo({ currency0, currency1, size = 16, margin = false }: DoubleCurrencyLogoProps) {
-    console.log("currency0: ", currency0);
-    console.log("currency1: ", currency1);
     return (
         <Wrapper sizeraw={size} margin={margin}>
             {currency0 && <HigherLogo currency={currency0 as WrappedCurrency} size={size.toString() + "px"} sizeraw={size} />}
